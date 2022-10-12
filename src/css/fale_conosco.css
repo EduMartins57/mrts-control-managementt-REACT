@@ -1,0 +1,49 @@
+
+label > #label01 {
+    display: flex;
+    font-size: 1.1em;
+    text-indent: 15px;
+}
+
+/* FORM ESPECIFICO DO FALE CONOSCO */
+#nomeFale, #sobrenomeFale, #emailNome, #ddd2, #textareamsg{
+    margin-top: 10px;
+    margin-left: 15px;
+    border-radius: 5px; 
+    width: 90%;
+    padding: 5px;
+
+}
+
+#nameFale, #sobreFale, #emailFale, #contactFale, #msgFale {
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold; 
+}
+
+
+#nomeFale:hover, #sobrenomeFale:hover, #emailNome:hover, #ddd2:hover, #textareamsg:hover{ 
+    border-color: var(--cor5);
+}
+
+#estilo {
+    border: 1px solid black;
+}
+
+textarea {
+    display: block;
+    border: 1px solid #0D0D0D;
+    border-radius: 5px 0px 5px 0px;
+    height: 70px;
+    width: 75%;
+    text-indent: 15px;
+    font-family: var(--font-padrao);
+}
+
+#textareamsg{
+    margin-top: 10px;
+    padding-left: 0%;
+    text-align: left;
+    padding: 2px;
+    border: 1px solid #0D0D0D;
+}

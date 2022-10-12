@@ -1,0 +1,17 @@
+#CNPJ, #RazaoSocial, #emailClientes, #telClientes{
+    margin-top: 10px;
+    margin-left: 15px;
+    border-radius: 5px; 
+    width: 90%;
+    padding: 5px;
+
+}
+#CNPJ1, #RazaoSocial1, #emailClientes1, #telClientes1 {
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold; 
+}
+
+#CNPJ:hover, #RazaoSocial:hover, #emailClientes:hover, #telClientes:hover { 
+    border-color: var(--cor5);
+}

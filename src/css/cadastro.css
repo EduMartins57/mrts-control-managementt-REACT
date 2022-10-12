@@ -1,0 +1,229 @@
+*{
+    border: none;
+} 
+body{
+    background-color: var(--cor2);
+    font-family: var(--font-destaque02);
+    width: 100%;
+    height: 100vh;
+}
+
+h1{
+    font-family: var(--font-destaque01);
+    font-size: 3em;
+    color: var(--cor5);
+    margin-bottom: 7px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.3em;
+}
+
+p{
+    font-weight: bold
+}
+
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;  
+    border: 10px;
+}
+
+article{
+    border: 2px solid var(--cor5);
+    background-color: white;
+    padding: 10px;  
+    border-radius: 10px;
+    margin-bottom: 25px;
+
+}
+
+/* INPUTS E LABELS */
+label{
+    display: inline-block;
+    font-size: 15px; 
+    text-indent: 15px;
+    margin-top: 3px;
+}
+
+input{
+    border: 1px solid #0D0D0D;
+}
+
+input:focus{
+    outline: none;
+}
+
+/* ESTILOS PARA FORMULÁRIO */
+.textfield{
+    background-color: white;
+    border: 2px solid var(--cor5);
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+    padding: 10px;
+
+}
+
+.cadastro-fornecedores{
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid var(--cor5);
+    max-width: 100%;
+    min-width: 350px;
+    height: 100%;
+    padding: 10px;
+    grid-area: "cadastro-fornecedores";
+}
+
+.form{
+    border: 2px solid var(--cor5);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+    border-radius: 5px 0px 5px 0px;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+
+#nomeProduto, #valorProduto, #validadeProduto, #estilo{
+    margin-top: 10px;
+    margin-left: 15px;
+    border-radius: 5px; 
+    width: 90%;
+    padding: 5px;
+
+}
+#nameProduct, #valorProduct, #validadeProduct, #quantidadeProduct, #loteProduct {
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold; 
+}
+
+#nomeProduto:hover, #valorProduto:hover, #validadeProduto:hover, #estilo:hover { 
+    border-color: var(--cor5);
+}
+
+/* BOTÃO LOGAR E LIMPAR NO SISTEMA */
+button{
+    margin: 5px;
+    padding: 5px;
+    width: 75px;
+    border: 2px solid var(--cor5);
+    border-radius: 5px;
+    font-family: var(--font-padrao);
+    font-weight: bold;  
+}
+
+button:hover{
+    background-color: var(--cor2);
+    color: var(--cor1);
+    font-weight: bold;  
+}
+
+/* COMEÇA O LAYOUT GRID */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px 0px 20px;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    grid-template-areas: 
+    "sidenav item item"
+    "footer footer footer";
+}
+
+.sidenav {
+    max-width: 100%;
+    min-width: 350px;
+    height: 100%;
+    background-color: var(--cor3);
+    border-radius: 10px;
+    grid-area: "sidenav";
+    grid-row: sidenav;
+}
+
+.sidenav li {
+    list-style: none;
+}
+
+.sidenav li a {
+    font-size: 1em;
+    color: var(--cor1);
+    text-decoration: none;
+    line-height: 3;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.sidenav li a:hover {
+    background-color: var(--cor2);
+}
+
+.item {
+    max-width: 100%;
+    min-width: 350px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    grid-area: "item";
+    font-family: var( --font-destaque02);
+}
+
+.item h2 {
+    padding-left: 5px;
+}
+
+.tabela {
+    color: var(--cor1);
+    font-weight: 600;
+    border-spacing: 2px;
+    font-size: 0.9em;
+    width: 100%;
+    padding: 5px;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 920px) {
+    .container {
+        grid-template-areas: 
+        "sidenav"
+        "item"
+        "item"
+        "footer"
+    }
+}
+
+@media (max-width: 820px) {
+    .container-fornecedores {
+        grid-template-areas:
+        "sidenav"
+        "cadastro-fornecedores"
+        "footer"; 
+    }
+    .textfield {
+        padding: 5px;
+    }
+    .textfield label {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        grid-template-areas:
+        "sidenav"
+        "item"
+        "item"
+        "footer"
+    }
+}
