@@ -3,6 +3,7 @@
         "appspot",
         "firebaseapp",
         "firestore",
+        "gerenciamento",
         "mrts",
         "Razao",
         "saidas"
