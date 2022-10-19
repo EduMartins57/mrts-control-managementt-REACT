@@ -19,11 +19,14 @@ const Page = () => {
         }finally{
             console.log(teste)
             setItens(teste);
+            setItens(teste.sort((a,b) => (a.loteProduto > b.loteProduto) ? 1 : ((b.loteProduto > a.loteProduto) ? -1 : 0)));
         }
     }, [])
 
     async function handleClose(item){
-        console.log(item)
+        //debugger
+        let qtdSaida = document.getElementById(item.id).value;
+        item.quantidade -= qtdSaida;
         await Api.addSaida(item)
     }
 
@@ -58,12 +61,12 @@ const Page = () => {
                         </thead>
                         <tbody>
                             {itens.map((item) => (
-                                <tr>
+                                <tr key={item.id}>
                                     <td>{item.nome}</td>                                 
                                     <td>{item.loteProduto}</td>
                                     <td>{item.valorProduto}</td>
-                                    <td><input id='max' type='number' placeholder={'Max: '+item.quantidade} max={item.quantidade}/></td>                                  
-                                    <td><button onClick={handleClose(item)}>Retirada</button></td>   
+                                    <td><input id={item.id} type='number' placeholder={'Max: '+item.quantidade} max={item.quantidade}/></td>                                  
+                                    <td id='Max'><button type="button" value={item} onClick={() => handleClose(item)}>Retirada</button></td>   
                                 </tr>
                             ))}
                         </tbody>

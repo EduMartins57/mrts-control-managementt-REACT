@@ -45,9 +45,10 @@ const Page = () => {
                             <tr>
                                 <td>Nome</td>
                                 <td>Lote</td>
-                                <td>Valor</td>
                                 <td>Total</td>
                                 <td>Data</td>
+                                <td>Valor</td>
+                                
                             </tr>
                         </thead>
                         <tbody>

@@ -1,6 +1,6 @@
 import firebase from 'firebase/compat/app';
 import { getAuth } from "firebase/auth";
-import {addDoc, collection, getDocs, query} from 'firebase/firestore';
+import {addDoc, collection, getDocs, query, setDoc, doc} from 'firebase/firestore';
 import {signOut } from 'firebase/auth';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -16,7 +16,7 @@ export default {
 
     // Logout no sistema
     logout: async () => {
-        debugger
+
         try {
             await signOut(auth)
             window.location.href = '/'; 
@@ -41,7 +41,7 @@ export default {
 
     addProduto: async (data) => {
         try {
-            await addDoc(collection(db, 'itens'), data)
+            await setDoc(doc(db, 'itens', String(data.id)), data)
         } catch (error) {
             console.log(error)
         }
@@ -50,7 +50,9 @@ export default {
     // Cadastro de Saidas de Produtos
     addSaida: async (data) => {
         try {
+            //debugger
             await addDoc(collection(db, 'saida'), data)
+            await setDoc(doc(db, 'itens', String(data.id)), data)
         } catch (error) {
             console.log(error)
         }

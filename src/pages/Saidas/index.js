@@ -45,8 +45,8 @@ const Page = () => {
                             <tr>
                                 <td>Nome</td>
                                 <td>Lote</td>
-                                <td>Valor</td>
                                 <td>Total</td>
+                                <td>Valor</td>
                                 <td>Data</td>
                             </tr>
                         </thead>

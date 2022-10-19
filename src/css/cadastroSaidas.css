@@ -5,26 +5,26 @@ tr{
 td {
     padding: 5px;
 }
-#max{
+input{
     border-radius: 5px;
     padding: 5px;
     width: 45%;
  }
 
 @media (max-width: 820px) {
-    #max {
+    input  {
         width: 100%;
     }
 }
 
 @media (max-width: 520px) {
-    #max {
+    input  {
         width: 100%;
     }
 }
 
 @media (max-width: 370px) {
-    #max {
+    input  {
         width: 100%;
     }
 }

@@ -9,10 +9,24 @@ import '../../css/index.css';
 import '../../css/cadastro.css';
 
 const Page = () => {
+
+    const [itens, setItens] = React.useState([])
+    React.useMemo(async () => {
+        let teste = [];
+        try {
+            teste = await Api.getProdutos()
+        } catch (error) {
+            console.log(error)
+        }finally{
+            setItens(teste.sort((a,b) => (a.loteProduto > b.loteProduto) ? 1 : ((b.loteProduto > a.loteProduto) ? -1 : 0)));
+        }
+    }, [])
+
     function handleSubmit(e) {
         e.preventDefault();
 
         let data = {
+            id: String(itens.length+1),
             nome: e.currentTarget[0].value,
             valorProduto: e.currentTarget[1].value,
             validadeProduto: e.currentTarget[2].value,
