@@ -29,6 +29,10 @@ const Page = () => {
         item.quantidade -= qtdSaida;
         await Api.addSaida(item)
     }
+    async function handleDelete(item){
+        debugger
+        await Api.deleteProduto(item)
+    }
 
     return(
         <html>
@@ -57,6 +61,8 @@ const Page = () => {
                                 <td>Lote</td>
                                 <td>Valor</td>
                                 <td>Total</td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -67,6 +73,7 @@ const Page = () => {
                                     <td>{item.valorProduto}</td>
                                     <td><input id={item.id} type='number' placeholder={'Max: '+item.quantidade} max={item.quantidade}/></td>                                  
                                     <td id='Max'><button type="button" value={item} onClick={() => handleClose(item)}>Retirada</button></td>   
+                                    <td id='Max'><button type="button" value={item} onClick={() => handleDelete(item)}>Excluir</button></td>   
                                 </tr>
                             ))}
                         </tbody>

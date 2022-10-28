@@ -25,14 +25,19 @@ const Page = () => {
     function handleSubmit(e) {
         e.preventDefault();
 
+        
         let data = {
             id: String(itens.length+1),
             nome: e.currentTarget[0].value,
             valorProduto: e.currentTarget[1].value,
             validadeProduto: e.currentTarget[2].value,
             quantidade: e.currentTarget[3].value,
-            loteProduto: e.currentTarget[4].value
+            loteProduto: e.currentTarget[4].value,
+            tipo: 'itens'
         }
+
+        data.mesRef = new Date(data.validadeProduto).getMonth();
+
 
         Api.addProduto(data);
     }

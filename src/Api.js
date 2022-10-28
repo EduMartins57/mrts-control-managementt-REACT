@@ -1,6 +1,6 @@
 import firebase from 'firebase/compat/app';
 import { getAuth } from "firebase/auth";
-import {addDoc, collection, getDocs, query, setDoc, doc} from 'firebase/firestore';
+import {addDoc, collection, getDocs, query, setDoc, doc, deleteDoc} from 'firebase/firestore';
 import {signOut } from 'firebase/auth';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -11,8 +11,22 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
 export const auth  = getAuth();
 
+
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
+
+    // Cadastro de Novos Entradas
+    getEntradas: async () => {
+        let data = [];
+        try {
+            let array = await getDocs(query(collection(db, 'itens')))
+            array.forEach((item) => data.push(item.data()))
+        } catch (error) {
+            console.log(error)
+        }
+        return data;
+    },
 
     // Logout no sistema
     logout: async () => {
@@ -42,6 +56,14 @@ export default {
     addProduto: async (data) => {
         try {
             await setDoc(doc(db, 'itens', String(data.id)), data)
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    deleteProduto: async (data) => {
+        try {
+            await deleteDoc(doc(db, 'itens', String(data.id)))
         } catch (error) {
             console.log(error)
         }
@@ -135,8 +157,10 @@ export default {
         const provider = new firebase.auth.FacebookAuthProvider();
         let result = await firebase.auth().signInWithPopup(provider);
         return result;
-    }
+    },
+
 }
+
 
 
 

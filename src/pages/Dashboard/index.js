@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Charts from '../Charts';
 import {Link} from 'react-router-dom';
 
 import '../../css/all.css';
@@ -8,6 +8,7 @@ import '../../css/dashbord.css'
 
 
 const Page = () => {
+
     return(
       <html>
         <body>
@@ -27,7 +28,7 @@ const Page = () => {
               </div>
 
               <div class="item">
-                <iframe title="Controle de Estoque TCC 2022 - Página 1" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiNjQzZGQ2NzEtMmI4Ni00NzJlLWJiNGEtNmM5OTA1ZDI5YjBkIiwidCI6IjkxODA4YmQwLTVjNmEtNDlkZi05M2RmLWZiNmE3NDBmNTk0ZCIsImMiOjh9" frameborder="0" allowFullScreen="true"></iframe>  
+                <Charts/>  
               </div>
             </section>
           </body>
